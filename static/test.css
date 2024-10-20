@@ -1,0 +1,106 @@
+
+.row{
+    width:110%;
+}
+.prev{
+    position: relative;
+    top: 100px;
+}
+.next{
+    position: relative;
+    top: 300px;
+}
+
+.col-1{
+    padding-right: 1px;
+}
+
+.container{
+    max-width: 1450px;
+
+}
+
+.label{
+    position: relative;
+    left: 17.5px;
+}
+
+.form-check{
+    margin:0;
+    border:0;
+    padding:0;
+    padding-bottom: 0;
+}
+
+.progress_rate{
+    font-weight:bold;
+    font-size:18px;
+    color:rgb(103, 100, 114);
+    
+}
+
+.discuss_rate{
+    font-weight:bold;
+    font-size:18px;
+    color:rgb(103, 100, 114);
+    display: grid;
+    justify-content: center;
+}
+
+.realtionship{
+    color:rgb(218, 27, 27);
+}
+
+.work{
+    color:rgb(29, 38, 147);
+}
+.school{
+    color:rgb(218, 27, 27);
+}
+.marriage{
+    color:rgb(29, 38, 147);
+}
+.family{
+    color:rgb(218, 27, 27);
+}
+.life{
+    color:rgb(29, 38, 147);
+}
+.mental{
+    color:rgb(218, 27, 27);
+}
+.physiology{
+    color:rgb(29, 38, 147);
+}
+.addiction{
+    color:rgb(218, 27, 27);
+}
+.lows{
+    color:rgb(29, 38, 147);
+}
+.passby{
+    color:rgb(218, 27, 27);
+}
+
+.buttons{
+    padding-top: 50px;
+    padding-left: 70px;
+}
+
+.skip{
+    padding-top: 50px;
+}
+
+.search-box{
+    border-radius: 50%;
+}
+
+.prev-next{
+    padding-top: 50px;
+    padding-left: 5px;
+    display: inline-flex ;
+}
+
+.text-right{
+    margin-left: 7%;
+}
