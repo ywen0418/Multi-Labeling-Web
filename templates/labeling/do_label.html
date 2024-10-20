@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link href='{% static "test.css" %}' rel="stylesheet" type="text/css" />
+
+<div class="form-group"></div>
+    <form method='POST'>
+        {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <p>ID: {{message_list.qQuestion_ID}}</p>
+                </div>
+                <div class="col-7">
+                
+                </div>
+                <div class="discuss_rate col">
+                    待討論：{{ total_discuss_num }}
+                </div>
+                <div class="progress_rate col">
+                    已標記進度：{{ seen_questions_num }} / {{ total_questions_num }}
+                </div>
+            </div>
+        {{ message_form.as_p }}
+
+
+        <div class="form-group">
+
+            <div class="row">
+                <div class="realtionship col-1">
+                    <div class="label">
+                        <p>感情</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eRelationship_1 }}
+                        <label>{{ select_form.eRelationship_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eRelationship_2 }}
+                        <label>{{ select_form.eRelationship_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eRelationship_3 }}
+                        <label>{{ select_form.eRelationship_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eRelationship_4 }}
+                        <label>{{ select_form.eRelationship_4.label }}</label>
+                    </div>
+                </div>
+                <div class="work col-1">
+                    <div class="label">
+                        <p>職場</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_1 }}
+                        <label>{{ select_form.eWork_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_2 }}
+                        <label>{{ select_form.eWork_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_3 }}
+                        <label>{{ select_form.eWork_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_4 }}
+                        <label>{{ select_form.eWork_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_5 }}
+                        <label>{{ select_form.eWork_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eWork_6 }}
+                        <label>{{ select_form.eWork_6.label }}</label>
+                    </div>
+                </div>
+                <div class="school col-1">
+                    <div class="label">
+                        <p>校園</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_1 }}
+                        <label>{{ select_form.eSchool_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_2 }}
+                        <label>{{ select_form.eSchool_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_3 }}
+                        <label>{{ select_form.eSchool_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_4 }}
+                        <label>{{ select_form.eSchool_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_5 }}
+                        <label>{{ select_form.eSchool_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eSchool_6 }}
+                        <label>{{ select_form.eSchool_6.label }}</label>
+                    </div>
+                </div>
+                <div class="marriage col-1">
+                    <div class="label">
+                        <p>婚姻</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMarriage_1 }}
+                        <label>{{ select_form.eMarriage_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMarriage_2 }}
+                        <label>{{ select_form.eMarriage_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMarriage_3 }}
+                        <label>{{ select_form.eMarriage_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMarriage_4 }}
+                        <label>{{ select_form.eMarriage_4.label }}</label>
+                    </div>
+                </div>
+                <div class="family col-1">
+                    <div class="label">
+                        <p>家庭</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_1 }}
+                        <label>{{ select_form.eFamily_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_2 }}
+                        <label>{{ select_form.eFamily_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_3 }}
+                        <label>{{ select_form.eFamily_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_4 }}
+                        <label>{{ select_form.eFamily_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_5 }}
+                        <label>{{ select_form.eFamily_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eFamily_6 }}
+                        <label>{{ select_form.eFamily_6.label }}</label>
+                    </div>
+                </div>
+                <div class="life col-1">
+                    <div class="label">
+                        <p>生活適應</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_1 }}
+                        <label>{{ select_form.eLife_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_2 }}
+                        <label>{{ select_form.eLife_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_3 }}
+                        <label>{{ select_form.eLife_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_4 }}
+                        <label>{{ select_form.eLife_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_5 }}
+                        <label>{{ select_form.eLife_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_6 }}
+                        <label>{{ select_form.eLife_6.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLife_7 }}
+                        <label>{{ select_form.eLife_7.label }}</label>
+                    </div>
+                </div>
+                <div class="mental col-1">
+                    <div class="label">
+                        <p>心理情緒</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_1 }}
+                        <label>{{ select_form.eMental_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_2 }}
+                        <label>{{ select_form.eMental_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_3 }}
+                        <label>{{ select_form.eMental_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_4 }}
+                        <label>{{ select_form.eMental_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_5 }}
+                        <label>{{ select_form.eMental_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eMental_6 }}
+                        <label>{{ select_form.eMental_6.label }}</label>
+                    </div>
+                </div>
+                <div class="physiology col-1">
+                    <div class="label">
+                        <p>生理狀態</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePhysiology_1 }}
+                        <label>{{ select_form.ePhysiology_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePhysiology_2 }}
+                        <label>{{ select_form.ePhysiology_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePhysiology_3 }}
+                        <label>{{ select_form.ePhysiology_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePhysiology_4 }}
+                        <label>{{ select_form.ePhysiology_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePhysiology_5 }}
+                        <label>{{ select_form.ePhysiology_5.label }}</label>
+                    </div>
+                </div>
+                <div class="addiction col-1">
+                    <div class="label">
+                        <p>成癮</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_1 }}
+                        <label>{{ select_form.eAddiction_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_2 }}
+                        <label>{{ select_form.eAddiction_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_3 }}
+                        <label>{{ select_form.eAddiction_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_4 }}
+                        <label>{{ select_form.eAddiction_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_5 }}
+                        <label>{{ select_form.eAddiction_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eAddiction_6 }}
+                        <label>{{ select_form.eAddiction_6.label }}</label>
+                    </div>
+                </div>
+                <div class="lows col-1">
+                    <div class="label">
+                        <p>法律與犯罪</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_1 }}
+                        <label>{{ select_form.eLawsandCrime_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_2 }}
+                        <label>{{ select_form.eLawsandCrime_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_3 }}
+                        <label>{{ select_form.eLawsandCrime_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_4 }}
+                        <label>{{ select_form.eLawsandCrime_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_5 }}
+                        <label>{{ select_form.eLawsandCrime_5.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_6 }}
+                        <label>{{ select_form.eLawsandCrime_6.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.eLawsandCrime_7 }}
+                        <label>{{ select_form.eLawsandCrime_7.label }}</label>
+                    </div>
+                </div>
+                <div class="passby col-1">
+                    <div class="label">
+                        <p>親友過世</p>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePassedAway_1 }}
+                        <label>{{ select_form.ePassedAway_1.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePassedAway_2 }}
+                        <label>{{ select_form.ePassedAway_2.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePassedAway_3 }}
+                        <label>{{ select_form.ePassedAway_3.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePassedAway_4 }}
+                        <label>{{ select_form.ePassedAway_4.label }}</label>
+                    </div>
+                    <div class="form-check">
+                        {{ select_form.ePassedAway_5 }}
+                        <label>{{ select_form.ePassedAway_5.label }}</label>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="prev-next col-1">
+                    <div class="text-left">
+                        <input type="button" value="prev" class="btn btn-outline-dark" onclick="location.href='/labeling/do_label/{{message_list.qQuestion_ID}}/prev/True/'">
+                    </div>
+                    <div class="text-right">
+                        <input type="button" value="next" class="btn btn-outline-dark" onclick="location.href='/labeling/do_label/{{message_list.qQuestion_ID}}/next/True/'">
+                    </div>
+                </div>
+                <div class="col-8">
+                </div>
+                <div class="buttons col-2">
+                    <button type="submit" class="btn btn-outline-primary" name="ques_filter" value="save">Save</button>
+                    <button type="submit" class="btn btn-outline-secondary" name="ques_filter" value="discuss">待討論</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock content %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div>
+    <ul class="list-group list-group-flush">
+    {% for percent in data_situation.items%}
+        <li class="list-group-item">
+            <div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width:{{percent}}%" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100">{{percent}}%</div>
+                </div>
+
+            </div>
+        </li>
+    {% endfor %}
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">還未標記</label>
+                    <select class="form-control" id="exampleFormControlSelect2" name="label_id">
+                        {% for labeling in undone %}
+                        <option value="{{labeling.qQuestion_ID}}">{{labeling.qQuestion_ID}}</option> 
+                        {% endfor%}
+                    </select>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Go!!" class="btn btn-outline-dark"> 
+                </div>
+            </form>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">已完成標記</label>
+                    <select class="form-control" id="exampleFormControlSelect2" name="label_id">
+                        {% for labeling in done %}
+                        <option value="{{labeling.qQuestion_ID}}">{{labeling.qQuestion_ID}}</option>
+                        {% endfor%}
+                    </select>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Go!!" class="btn btn-outline-dark"> 
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">跳過</label>
+                    <select class="form-control" id="exampleFormControlSelect2" name="label_id">
+                        {% for labeling in skip %}
+                        <option value="{{labeling.qQuestion_ID}}">{{labeling.qQuestion_ID}}</option> 
+                        {% endfor%}
+                    </select>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Go!!" class="btn btn-outline-dark"> 
+                </div>
+            </form>
+        </div>
+        <div class="col-1">
+        </div>
+        <div class="col-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">待討論</label>
+                    <select class="form-control" id="exampleFormControlSelect2" name="label_id">
+                        {% for labeling in discuss %}
+                        <option value="{{labeling.qQuestion_ID}}">{{labeling.qQuestion_ID}}</option> 
+                        {% endfor%}
+                    </select>
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Go!!" class="btn btn-outline-dark"> 
+                </div>
+            </form>
+        </div>
+    </div>
+    </ul>
+</div>
+{% endblock %}
+
+{% block nav_summary %} active {% endblock %}
